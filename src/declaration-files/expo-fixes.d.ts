@@ -14,21 +14,10 @@ type FontNames =
   'SimpleLineIcons' |
   'Zocial';
 
-type Font = {
-  font: {
-    [K: string]: number;
-  };
-  getFontFamily: Function;
-  getRawGlyphMap: Function;
-  glyphMap: {
-    [K: string]: number;
-  };
-}
-
 declare module 'expo' {
 
   declare const Icon: {
-    [K in FontNames]: Font;
+    [K in FontNames]: any;
   }
 
 }

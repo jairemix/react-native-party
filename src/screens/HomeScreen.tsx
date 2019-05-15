@@ -12,7 +12,7 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends React.Component {
+export class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fbfbfb',
     paddingVertical: 20,
-  },
+  } as any, // TODO: fix type
   tabBarInfoText: {
     fontSize: 17,
     color: 'rgba(96,100,109, 1)',

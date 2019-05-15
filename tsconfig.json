@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./",
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,8 +20,8 @@
     "noEmit": true,
     "jsx": "react-native",
     "typeRoots": [
-      "node_modules/@types",
-      "src/declaration-files"
+      "./node_modules/@types",
+      "./src/declaration-files",
     ]
   },
   "include": [
