@@ -3,6 +3,8 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import { AppNavigator } from './navigation/AppNavigator';
 import { noop } from 'lodash-es';
+import { AppStore, configureAppStore, store } from './store';
+import { Provider } from 'react-redux';
 
 interface Props {
   skipLoadingScreen?: boolean;
@@ -69,3 +71,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+
+/** Redux Stuff **/
+
+/* 
+Create a root component that receives the store via props
+and wraps the App component with Provider, giving props to containers
+*/
+export const Root: React.FC<{ store: AppStore }> = (props) => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+};
+
+// ReactDOM.render(<Root store={store} />, document.getElementById('root'));

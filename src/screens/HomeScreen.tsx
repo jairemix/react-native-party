@@ -11,6 +11,7 @@ import {
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import { PartyManagementPage } from '../party-management/party-management-page/party-management-page';
 
 export class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -21,7 +22,12 @@ export class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
+
+          {this._maybeRenderDevelopmentModeWarning()}
+
+          <PartyManagementPage />
+        
+          {/* <View style={styles.welcomeContainer}>
             <Image
               source={
                 __DEV__
@@ -50,16 +56,16 @@ export class HomeScreen extends React.Component {
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
+        {/* <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
           <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
             <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
           </View>
-        </View>
+        </View> */}
       </View>
     );
   }

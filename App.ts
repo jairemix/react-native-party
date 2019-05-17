@@ -1,2 +1,3 @@
-import { App } from './src/App';
-export default App;
+import { Root } from './src/App';
+
+export default Root;
